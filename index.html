@@ -14,16 +14,26 @@
         <h2>Vacation Contest Sign-Up Form</h2>
         <form method="GET" action="results.html">
             <div>
-                <label for="firstname">Your First Name</label>
-                <input type="text" id="firstname" name="firstname">
-                <label for="lastname">Your Last Name</label>
-                <input type="text" id="lastname" name="lastname">
+                <label for="firstname"><span class="required-field">*</span>Your First Name</label>
+                <input type="text" id="firstname" name="firstname" required
+                    minlength="2" maxlength="35">
+                
+                <label for="lastname"><span class="required-field">*</span>Your Last Name</label>
+                <input type="text" id="lastname" name="lastname" required
+                    minlength="2" maxlength="35">
+                
+                <label for="age">Your Age</label>
+                <input type="number" name="age" id="age" min="21" max="120">
+                <h5>Must be 21 or older to enter the contest.</h5>
+
             </div>
             <fieldset>
                 <legend>Your Contact Info</legend>
                 <div>
-                    <label for="email">Your Email</label>
-                    <input type="email" id="email" name="email">
+                    <label for="email"><span class="required-field">*</span>Your Email</label>
+                    <input type="email" id="email" name="email" required>
+                    
+
                 </div>
                 <div>
                     <label for="address">Your Street Address</label>
@@ -86,7 +96,7 @@
                         <option value="WY">Wyoming</option>
                     </datalist>
                     <label for="zip">Your Zipcode</label>
-                    <input type="text" id="zip" name="zip">
+                    <input type="text" pattern="[0-9]{5}"  title="5-Digit US Zip code"  id="zip" name="zip">
                 </div>
             </fieldset>
 
@@ -130,6 +140,9 @@
                     <input type="checkbox" id="drinks" name="extras" value="Drinks Package"> 
                     <label for="drinks">All-inclusive Drinks Package</label>
                 </div>
+
+                <label for="secret-code"><span class="required-field">*</span>Your Secret Code (must be alphanumeric characters)</label>
+                <input type="password" id="password" name="password" pattern="[0-9a-zA-z]{6}"title="6-Character Alphanumeric Passcode"  required>
             </fieldset>
             
             <input type="submit" value="Enter the Contest!">
